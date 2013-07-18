@@ -6,8 +6,9 @@ def get_attribute_level():
     
     score_of_12 = randint(1, 12)
     score_of_4 = randint(1, 4)
+    change = math.floor(score_of_12 / score_of_4)
     
-    return initial_value + math.floor(score_of_12 / score_of_4)
+    return initial_value + change
     
 def make_character(name):
     character = {'name': name}
