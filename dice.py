@@ -1,21 +1,23 @@
 import re
 from random import randint
 
+def get_sides():
+    while True:
+        print """
+You can have 4, 6 or 12 sides
+How many sides do you want?"""
+        
+        sides_raw = raw_input()
+        
+        sides = int(sides_raw)
+    
+        if sides == 4 or sides == 6 or sides == 12:
+            return sides
+
 print """Welcome to the game!
 You need to set the number of sides for the dice."""
 
-sides = False
-sides_regex = re.compile("^(4|6|12)$")
-
-while not sides:
-    print """
-You can have 4, 6 or 12 sides
-How many sides do you want?"""
-
-    sides_raw = raw_input()
-    
-    if sides_regex.match(sides_raw):
-        sides = int(sides_raw)
+sides = get_sides()
 
 keep_playing = True
 keep_playing_regex = re.compile("^y(es)?$", re.IGNORECASE)
