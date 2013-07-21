@@ -2,13 +2,15 @@ from dice import Die
 from math import floor
 
 class Character:
-    def __init__(self, name):
+    def __init__(self, name, strength, skill):
         self._name = name
-        self._strength = get_attribute_level()
-        self._skill = get_attribute_level()
+        self._strength = strength
+        self._skill = skill
         self._alive = True
+        
     def get_name(self):
         return self._name
+    
     def get_strength(self):
         return self._strength
     def set_strength(self, value):
@@ -16,12 +18,14 @@ class Character:
             self._strength = value
         else:
             self._alive = True
+            
     def get_skill(self):
         return self._skill
     def set_skill(self, value):
         if value < 0:
             value = 0
         self._skill = value
+        
     def is_alive(self):
         return self._alive
 
@@ -35,6 +39,9 @@ def get_attribute_level():
     change = floor(score_of_12 / score_of_4)
     
     return initial_value + change
+
+def create_character_random_attribute_levels(name):
+    return Character(name, get_attribute_level(), get_attribute_level())
 
 def calculate_attribute_modifier(character_1_attribute, character_2_attribute):
     difference = abs(character_1_attribute - character_2_attribute)
@@ -65,8 +72,8 @@ def encounter(character_1, character_2):
 
 if __name__ == "__main__":
     characters = []
-    characters.append(Character("Character 1"))
-    characters.append(Character("Character 2"))  
+    characters.append(create_character_random_attribute_levels("Character 1"))
+    characters.append(create_character_random_attribute_levels("Character 2"))  
       
     characters_file = open('characters.txt', 'w')
     for character in characters:
