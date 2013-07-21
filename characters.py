@@ -36,8 +36,8 @@ def get_attribute_level():
     
     return initial_value + change
 
-def calculate_attribute_modifier(character_attribute_1, character_attribute_2):
-    difference = abs(character_attribute_1 - character_attribute_2)
+def calculate_attribute_modifier(character_1_attribute, character_2_attribute):
+    difference = abs(character_1_attribute - character_2_attribute)
     
     modifier = floor(difference / 5)
     
