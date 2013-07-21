@@ -7,12 +7,15 @@ How many sides do you want?"""
     
     sides_raw = raw_input()
     
-    sides = int(sides_raw)
-
-    if sides == 4 or sides == 6 or sides == 12:
-        return sides
-    else:
+    if not sides_raw.isdigit():
         return get_sides()
+    
+    sides = int(sides_raw)
+    
+    if not (sides == 4 or sides == 6 or sides == 12):
+        return get_sides()
+    
+    return sides 
 
 def get_yes_no(question):
     print question
