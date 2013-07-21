@@ -59,3 +59,22 @@ def make_character(name):
     
     return character
 
+def calculate_attribute_modifier(attribute, character1, character2):
+    difference = abs(character1[attribute] - character2[attribute])
+    
+    modifier = math.floor(difference / 5)
+    
+    return modifier
+# 
+# def encounter(character1, character2):
+#     strength_modifier = calculate_attribute_modifier('strength', character1, character2)
+#     skill_modifier = calculate_attribute_modifier('skill', character1, character2)
+#     
+#     die_score1 = rand(1, 6)
+#     die_score2 = rand(1, 6)
+#     
+#     if die_score1 != die_score2:
+#         if die_score1 > die_score2:
+#             character1[]
+#         
+    
