@@ -6,5 +6,4 @@ characters.append(make_character("Character 2"))
 
 characters_file = open('characters.txt', 'w')
 
-for character in characters:
-    print>>characters_file, character
+print>>characters_file, characters
