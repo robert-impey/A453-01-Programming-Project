@@ -5,7 +5,8 @@ class Character:
     def __init__(self, name, strength, skill):
         self._name = name
         
-        if not (isinstance(strength, int) and isinstance(strength, int)):
+        if not (isinstance(strength, int) 
+                and isinstance(strength, int)):
             raise ValueError
         self._strength = strength
         self._skill = skill
@@ -38,10 +39,9 @@ class Character:
         return self._alive
     
     def to_string(self):
-        return "Name: %s, Strength: %s, Skill: %s, Is alive?: %s" % (self.get_name(), 
-                                                                     self.get_strength(), 
-                                                                     self.get_skill(), 
-                                                                     self.is_alive())
+        return ("Name: %s, Strength: %s, Skill: %s, Is alive?: %s" % 
+                (self.get_name(), self.get_strength(), 
+                 self.get_skill(), self.is_alive()))
 
 def get_attribute_level():
     initial_value = 10
@@ -64,4 +64,4 @@ if __name__ == "__main__":
       
     characters_file = open('characters.txt', 'w')
     for character in characters:
-        print >>characters_file, character.to_string()
+        print >> characters_file, character.to_string()
