@@ -4,7 +4,10 @@ from math import floor
 from rpg import get_positive_whole_number_from_user
 
 def make_character_user_set_attribute_levels(name):
-    return Character(name, get_positive_whole_number_from_user("Please enter the strength for %s." % name), get_positive_whole_number_from_user("Please set the skill level for %s." % name))
+    return Character(
+                     name,
+                     get_positive_whole_number_from_user("Please enter the strength for %s." % name),
+                     get_positive_whole_number_from_user("Please set the skill level for %s." % name))
 
 def print_characters(characters):
     for character in characters:
@@ -18,7 +21,9 @@ def calculate_attribute_modifier(character_1_attribute, character_2_attribute):
     return int(modifier)
 
 def encounter(character_1, character_2):
-    strength_modifier = calculate_attribute_modifier(character_1.get_strength(), character_2.get_strength())
+    strength_modifier = calculate_attribute_modifier(
+                                                     character_1.get_strength(),
+                                                     character_2.get_strength())
     skill_modifier = calculate_attribute_modifier(character_1.get_skill(), character_2.get_skill())
     
     print "Stength modifier: %d" % strength_modifier

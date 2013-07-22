@@ -38,7 +38,10 @@ class Character:
         return self._alive
     
     def to_string(self):
-        return "Name: %s, Strength: %s, Skill: %s, Is alive?: %s" % (self.get_name(), self.get_strength(), self.get_skill(), self.is_alive())
+        return "Name: %s, Strength: %s, Skill: %s, Is alive?: %s" % (self.get_name(), 
+                                                                     self.get_strength(), 
+                                                                     self.get_skill(), 
+                                                                     self.is_alive())
 
 def get_attribute_level():
     initial_value = 10
