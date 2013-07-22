@@ -21,17 +21,26 @@ def encounter(character_1, character_2):
     strength_modifier = calculate_attribute_modifier(character_1.get_strength(), character_2.get_strength())
     skill_modifier = calculate_attribute_modifier(character_1.get_skill(), character_2.get_skill())
     
+    print "Stength modifier: %d" % strength_modifier
+    print "Skill modifier: %d" % skill_modifier
+    
     die = Die(6)
     die_score_1 = die.roll()
     die_score_2 = die.roll()
-     
-    if die_score_1 != die_score_2:
+    
+    print "Die score 1: %d, die score 2: %d" % (die_score_1, die_score_2)
+    
+    if die_score_1 == die_score_2:
+        print "Tie!"
+    else:
         if die_score_1 > die_score_2:
+            print "Player 1 wins!"
             character_1.set_strength(character_1.get_strength() + strength_modifier)
             character_1.set_skill(character_1.get_skill() + skill_modifier)
             character_2.set_strength(character_2.get_strength() - strength_modifier)
             character_2.set_skill(character_2.get_skill() - skill_modifier)
         else:
+            print "Player 2 wins!"
             character_1.set_strength(character_1.get_strength() - strength_modifier)
             character_1.set_skill(character_1.get_skill() - skill_modifier)
             character_2.set_strength(character_2.get_strength() + strength_modifier)
