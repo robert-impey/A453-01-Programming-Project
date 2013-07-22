@@ -18,6 +18,7 @@ class Character:
     
     def get_strength(self):
         return self._strength
+    
     def set_strength(self, value):
         if not isinstance(value, int):
             raise ValueError
@@ -28,6 +29,7 @@ class Character:
             
     def get_skill(self):
         return self._skill
+    
     def set_skill(self, value):
         if not isinstance(value, int):
             raise ValueError
@@ -43,6 +45,7 @@ class Character:
                 (self.get_name(), self.get_strength(), 
                  self.get_skill(), self.is_alive()))
 
+
 def get_attribute_level():
     initial_value = 10
     
@@ -56,6 +59,7 @@ def get_attribute_level():
 
 def create_character_random_attribute_levels(name):
     return Character(name, get_attribute_level(), get_attribute_level())
+
 
 if __name__ == "__main__":
     characters = []

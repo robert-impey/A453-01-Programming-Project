@@ -25,6 +25,7 @@ class Die:
     def roll(self):
         return randint(1, self.get_sides())
 
+
 def create_die_for_user():
     print """You need to set the number of sides for the dice.
 How many sides do you want?"""
@@ -49,6 +50,7 @@ def play():
     
     if keep_playing:
         play()
+
 
 if __name__ == "__main__":
     play()
