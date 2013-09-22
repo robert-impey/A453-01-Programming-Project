@@ -1,5 +1,3 @@
-//module A453Dice
-
 open System
 
 if fsi.CommandLineArgs.Length = 2 then
