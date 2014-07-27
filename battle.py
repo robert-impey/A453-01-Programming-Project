@@ -65,7 +65,6 @@ def encounter(character_1, character_2):
             character_2.set_skill(character_2.get_skill() + 
                                   skill_modifier)
 
-
 if __name__ == "__main__":
     characters = []
     characters.append(make_character_user_set_attribute_levels(
