@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from random import randint
 from rpg import get_yes_no
 
