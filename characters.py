@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from dice import Die
 from math import floor
 
@@ -12,13 +14,13 @@ class Character:
         self._skill = skill
         
         self._alive = True
-        
+
     def get_name(self):
         return self._name
-    
+
     def get_strength(self):
         return self._strength
-    
+
     def set_strength(self, value):
         if not isinstance(value, int):
             raise ValueError
@@ -26,20 +28,20 @@ class Character:
             self._strength = value
         else:
             self._alive = True
-            
+
     def get_skill(self):
         return self._skill
-    
+
     def set_skill(self, value):
         if not isinstance(value, int):
             raise ValueError
         if value < 0:
             value = 0
         self._skill = value
-        
+
     def is_alive(self):
         return self._alive
-    
+
     def to_string(self):
         return ("Name: %s, Strength: %s, Skill: %s, Is alive?: %s" % 
                 (self.get_name(), self.get_strength(), 
@@ -59,7 +61,6 @@ def get_attribute_level():
 
 def create_character_random_attribute_levels(name):
     return Character(name, get_attribute_level(), get_attribute_level())
-
 
 if __name__ == "__main__":
     characters = []

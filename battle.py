@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from characters import Character
 from dice import Die
 from math import floor
